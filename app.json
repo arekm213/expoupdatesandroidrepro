@@ -1,4 +1,13 @@
 {
   "name": "ExpoUpdatesAndroidRepro",
-  "displayName": "ExpoUpdatesAndroidRepro"
+  "displayName": "ExpoUpdatesAndroidRepro",
+  "expo": {
+    "name": "ExpoUpdatesAndroidRepro",
+    "slug": "expo-updates-android-repro",
+    "sdkVersion": "46.0.0",
+    "owner": "readwise"
+  },
+  "updates": {
+    "enabled": true
+  }
 }
