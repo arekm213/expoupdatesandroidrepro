@@ -52,6 +52,17 @@ const Section = ({children, title}) => {
   );
 };
 
+// Regular fetch function
+const getFishSpecies = async () => {
+  try {
+    const response = await fetch('https://www.fishwatch.gov/api/species');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return null;
+  }
+};
+
 const App = () => {
   const [wasOTAUpdated, setWasOTAUpdated] = useState(false);
 
@@ -67,6 +78,9 @@ const App = () => {
 
       try {
         console.log('EXPO-UPDATE BEFORE CHECK FOR UPDATE');
+        // To test what happens with regular fetch - remove comment from two lines below and comment 'const {isAvailable} = await Updates.checkForUpdateAsync();' line
+        // const res = await getFishSpecies();
+        // const isAvailable = !!res;
         const {isAvailable} = await Updates.checkForUpdateAsync();
         if (isAvailable && !timeForUpdatePassed) {
           console.log('EXPO-UPDATE BEFORE FETCH UPDATE');
